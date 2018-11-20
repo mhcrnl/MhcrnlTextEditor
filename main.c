@@ -27,8 +27,9 @@ int main (int argc, char *argv[]) {
     g_log_set_handler ("Gtk", G_LOG_LEVEL_WARNING, (GLogFunc) gtk_false, NULL);
     gtk_init (&argc, &argv);
     g_log_set_handler ("Gtk", G_LOG_LEVEL_WARNING, g_log_default_handler, NULL);
-
-    /* Create the main window */
+    /*
+     Create the main window
+     */
     win = gtk_window_new (GTK_WINDOW_TOPLEVEL);
     gtk_container_set_border_width (GTK_CONTAINER (win), 8);
     gtk_window_set_title (GTK_WINDOW (win), "MhcrnlTextEditor");
