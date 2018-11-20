@@ -15,12 +15,17 @@ int main (int argc, char *argv[]) {
     GtkWidget *win = NULL;
     GtkWidget *vbox = NULL;
     /*
+        Create text view: https://developer.gnome.org/gtk2/stable/GtkTextView.html
+    */
+    GtkWidget *text_view = NULL;
+    /*
         Create menu
     */
     GtkWidget *menubar;
     GtkWidget *fileMenu;
     GtkWidget *fileMi;
     GtkWidget *quitMi;
+    GtkWidget *openMi;
     /*
         Initialize GTK+
     */
@@ -42,14 +47,20 @@ int main (int argc, char *argv[]) {
     vbox = gtk_vbox_new (FALSE, 0);
     gtk_container_add (GTK_CONTAINER (win), vbox);
 
+    text_view = gtk_text_view_new();
+    gtk_container_add(GTK_CONTAINER(vbox), text_view);
+
     menubar = gtk_menu_bar_new();
     fileMenu = gtk_menu_new();
 
     fileMi = gtk_menu_item_new_with_label("File");
+    openMi = gtk_menu_item_new_with_label("Open");
     quitMi = gtk_menu_item_new_with_label("Quit");
 
     gtk_menu_item_set_submenu(GTK_MENU_ITEM(fileMi), fileMenu);
+    gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), openMi);
     gtk_menu_shell_append(GTK_MENU_SHELL(fileMenu), quitMi);
+
     gtk_menu_shell_append(GTK_MENU_SHELL(menubar), fileMi);
 
     //button = gtk_button_new_from_stock (GTK_STOCK_DIALOG_INFO);
