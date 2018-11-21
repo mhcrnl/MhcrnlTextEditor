@@ -1,5 +1,6 @@
 # MhcrnlTextEditor
 C,  CodeBlocks, GTK+ text editor.
+![screen1](Screenshots/Screenshot1.png)
 
 ## Tehnologies
 Ubuntu 18.04
